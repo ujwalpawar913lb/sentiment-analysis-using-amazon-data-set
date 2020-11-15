@@ -4,6 +4,7 @@ matplotlib
 pandas
 streamlit
 gensim
+xlrd >= 1.0.0
 
 
 
