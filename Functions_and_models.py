@@ -21,7 +21,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
 
-from gensim.models import KeyedVectors
+#from gensim.models import KeyedVectors
 
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import FunctionTransformer
@@ -88,13 +88,13 @@ for model in model_list:
 # In[14]:
 
 
-filename = 'GoogleNews-vectors-negative300.bin' # need to have this file locally
-word2vec = KeyedVectors.load_word2vec_format(filename, binary=True,limit=1000000)
+#filename = 'GoogleNews-vectors-negative300.bin' # need to have this file locally
+#word2vec = KeyedVectors.load_word2vec_format(filename, binary=True,limit=1000000)
 
 
 # In[15]:
 
-
+'''
 def word2vec_func_mean(text_col,target=None):
     return np.array([
             np.mean([word2vec[w] for w in words if w in word2vec] or [np.zeros(300)], axis=0)
@@ -120,7 +120,7 @@ for model in model_list:
                             ('model',model)])
     pipelines_w2v.append(pipe_w2v)
 
-
+'''
 # In[26]:
 
 
@@ -130,7 +130,7 @@ import pickle
 # In[30]:
 
 
-final_model=pipelines_w2v[0].fit(df['text'],df['target'])
+final_model=pipelines[2].fit(df['text'],df['target'])
 
 
 # In[36]:
