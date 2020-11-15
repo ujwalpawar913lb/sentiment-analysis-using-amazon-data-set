@@ -48,10 +48,11 @@ def main():
     for i in range(num):
         if st.checkbox('Custom Input',value=False,key=i):
             inp=st.text_input('Input comment no {}'.format(i+1))
+            place=st.empty()
         else:
             inp = st.selectbox('Input comment no {}'.format(i+1),suggest_df.iloc[i*no_sug:i*no_sug+no_sug,:]['Text'].tolist())
             place=st.empty()
-            placeholder_lst.append(place)
+        placeholder_lst.append(place)
         lst.append(inp)
  
     
